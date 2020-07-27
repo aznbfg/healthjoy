@@ -76,7 +76,7 @@ def fork_repo(access_token, owner, repo):
     req = request.Request(fork_uri, data={}, headers=headers)
     try:
         response = request.urlopen(req)
-        return form_html(F'<p>Successfully forked repo: <a href="{repo}">{repo}</a></p>')
+        return form_html(F'<p>Successfully forked repo: <a href="https://github.com/{owner}/{repo}/">{repo}</a></p>')
     except Exception as e:
         return form_html('Bad fork request.')
     # return {
